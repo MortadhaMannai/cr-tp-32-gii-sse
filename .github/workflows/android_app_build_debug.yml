@@ -1,0 +1,57 @@
+name: Android Build Debug and Upload
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.branch }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    env:
+      ANDROID_APP_PATH: application
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Check if the application folder contains an Android project
+      - name: Check for Android project
+        run: |
+          if [ -f "${{env.ANDROID_APP_PATH}}/build.gradle" ] || [ -f "${{env.ANDROID_APP_PATH}}/build.gradle.kts" ]; then
+            echo "Android project found"
+            if [ -n "$(find ${{env.ANDROID_APP_PATH}}/app/src/main/java -name "*.kt" -type f)" ]; then
+              echo "Module app is written in Kotlin"
+              exit 1
+            else
+              echo "Module app is written in Java"
+            fi
+          else
+            echo "No Android project found"
+            exit 1
+          fi
+
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant gradlew permission
+        run: chmod +x ${{env.ANDROID_APP_PATH}}/gradlew
+
+      # Build the debug apk
+      - name: Build debug apk
+        run: ./${{env.ANDROID_APP_PATH}}/gradlew assembleDebug -p ${{env.ANDROID_APP_PATH}}
+
+      # Upload the debug apk to GitHub
+      - name: Upload debug apk
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-debug
+          path: "${{env.ANDROID_APP_PATH}}/app/build/outputs/apk/debug/*"
