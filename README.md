@@ -31,14 +31,14 @@ Lequel des éléments suivants est le composant principal dont vous avez besoin 
 
 - [ ] `RecyclerView`
 - [ ] `RecyclerView.Adapter`
-- [ ] `RecyclerView.ViewHolder`
+- [*] `RecyclerView.ViewHolder`
 - [ ] `AppCompatActivity`
 
 ### **Question 3**
 
 Quelle interface doit-on implémenter pour écouter et répondre aux clics des utilisateurs dans une `RecyclerView`? Choisissez-en un.
 
-- [ ] `View.onClickListener`
+- [*] `View.onClickListener`
 - [ ] `RecyclerView.Adapter`
 - [ ] `RecyclerView.ViewHolder`
 - [ ] `View.OnKeyListener`
