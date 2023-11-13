@@ -23,7 +23,7 @@ Laquelle des affirmations suivantes concernant une `RecyclerView` est fausse ? 
 - [ ] Un `RecyclerView` est un moyen plus économe en ressources pour afficher des listes déroulantes.
 - [ ] Il faut fournir une mise en page (layout) pour un seul élément de la liste.
 - [ ] Tous les éléments de la liste se ressemblent.
-- [*] on a pas besoin d'un gestionnaire de disposition (layout manager) avec un `RecyclerView` pour gérer la hiérarchie et la disposition des éléments `View`.
+- [x] on a pas besoin d'un gestionnaire de disposition (layout manager) avec un `RecyclerView` pour gérer la hiérarchie et la disposition des éléments `View`.
 
 ### **Question 2**
 
@@ -31,14 +31,14 @@ Lequel des éléments suivants est le composant principal dont vous avez besoin 
 
 - [ ] `RecyclerView`
 - [ ] `RecyclerView.Adapter`
-- [*] `RecyclerView.ViewHolder`
+- [x] `RecyclerView.ViewHolder`
 - [ ] `AppCompatActivity`
 
 ### **Question 3**
 
 Quelle interface doit-on implémenter pour écouter et répondre aux clics des utilisateurs dans une `RecyclerView`? Choisissez-en un.
 
-- [*] `View.onClickListener`
+- [x] `View.onClickListener`
 - [ ] `RecyclerView.Adapter`
 - [ ] `RecyclerView.ViewHolder`
 - [ ] `View.OnKeyListener`
