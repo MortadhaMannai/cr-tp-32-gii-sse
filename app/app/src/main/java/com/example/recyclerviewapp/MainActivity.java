@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity implements RecipeAdapter.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // Set the title for the activity
+            setTitle("Recycler View");
         // Create a list of recipes
         List<Recipe> recipeList = new ArrayList<>();
         recipeList.add(new Recipe("Kale/Lemon Sandwiches", "This sandwiches is stunningly delicious and tastes as good as it is healthy .Any greens of choice ill work.The lemon adds an almost sweet taste.Be generous with it !"));
