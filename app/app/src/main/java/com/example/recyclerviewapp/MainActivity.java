@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements RecipeAdapter.OnI
 
         // Create a list of recipes
         List<Recipe> recipeList = new ArrayList<>();
-        recipeList.add(new Recipe("Recipe 1", "Description 1"));
+        recipeList.add(new Recipe("Kale/Lemon Sandwiches", "This sandwiches is stunningly delicious and tastes as good as it is healthy .Any greens of choice ill work.The lemon adds an almost sweet taste.Be generous with it !"));
         recipeList.add(new Recipe("Recipe 2", "Description 2"));
         // Add more recipes as needed
 
